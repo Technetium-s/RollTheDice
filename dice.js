@@ -32,6 +32,9 @@
     var user = document.getElementById("user"); //캐릭터 요소 선택
     
 
+    
+
+
     //플레이 인원수 선택시 실행됨
     char_select.addEventListener("click", function(){
         char_select.style.display = "none";
@@ -75,48 +78,38 @@
             // 새로 옮겨진 위치값 - 원래 있던 위치값 = 만큼 이동시키면 됨
             // 근데 그러려면 기존의 위치값을 저장해둬야 하는데...a
             // 그리고 이동칸수가 20이 넘어갔을 땐 어떻게 애니메이션을 잡을가 일단 0 쪽으로 리버스 시켜보자
-
-        const myTimeout = setTimeout(pauseHome, 5000);
+        
         var home = document.getElementById("home");
-        function resumeHome(){
-            home.style.animationPlayState = "resume";
-        }
-        function pauseHome(){
-            home.style.animationPlayState = "paused";
-            
-        }
+
         //캐릭터 이동 후 발생하는 이벤트
         (function event(){
             if(calcPos < 1){
-                resumeHome();
-                myTimeout;
+                setTimeout(function startHome(){
+                    home.style.visibility = "visible";
+                    home.style.animationPlayState = "running";
+                }, 0000);
+                setTimeout(function stopHome() {
+                    home.style.visibility = "hidden";
+                    home.style.animationPlayState = "paused";
+                  }, 3000);
                 return console.log("0칸");
-
-            }else if( calcPos < 2){ 
-                resumeHome();
-                myTimeout;
+            }else if( calcPos < 2){
                 return console.log("1칸");
 
             }else if( calcPos < 3){
-                resumeHome();
-                myTimeout;
                 return console.log("2칸"); 
 
             }else if( calcPos < 4){
-                resumeHome();
-                myTimeout;
                 return console.log("3칸"); 
             }else if( calcPos < 5){
-                resumeHome();
-                myTimeout;
                 return console.log("4칸"); 
             }else if( calcPos < 6){
-                resumeHome();
-                myTimeout;
                 return console.log("5칸"); 
             }else if( calcPos < 7){
-                resumeHome();
-                myTimeout;
+                setTimeout(function startHome(){
+                }, 0500);
+                setTimeout(function stopHome() {
+                  }, 3000);
                 return console.log("6칸"); 
             }else if( calcPos < 8){
                 return console.log("7칸"); 

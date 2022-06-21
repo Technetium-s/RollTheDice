@@ -6,7 +6,7 @@
     top: 30%;
     animation-name: home;
     animation-duration: 3s;
-    animation-delay: 2s;
+    animation-iteration-count: infinite;
     animation-play-state: paused;
     visibility: hidden;
 }
@@ -18,20 +18,18 @@
 }
 @keyframes home{
     0% {
-        margin-left: -500px;
-        visibility: visible;
+        margin-left: -1000px;
     }
     10%{
-        margin-left: 50px;
+        margin-left: -180px;
     }
-    55%{
-        margin-left: -50px;
+    65%{
+        margin-left: -300px;
     }
     70%{
         margin-left: 1000px;
     }
     100%{
         margin-left: 1000px;
-        visibility: hidden;
     }
 }
