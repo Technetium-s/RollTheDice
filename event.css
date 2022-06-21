@@ -1,0 +1,37 @@
+#home{
+    font-size: 72px;
+    position: absolute;
+    z-index: 2;
+    display: inline;
+    top: 30%;
+    animation-name: home;
+    animation-duration: 3s;
+    animation-delay: 2s;
+    animation-play-state: paused;
+    visibility: hidden;
+}
+#home p{
+    text-align: center;
+    font-family: 'PyeongChangPeace-Bold';
+    vertical-align: middle;
+    font-style: italic;
+}
+@keyframes home{
+    0% {
+        margin-left: -500px;
+        visibility: visible;
+    }
+    10%{
+        margin-left: 50px;
+    }
+    55%{
+        margin-left: -50px;
+    }
+    70%{
+        margin-left: 1000px;
+    }
+    100%{
+        margin-left: 1000px;
+        visibility: hidden;
+    }
+}

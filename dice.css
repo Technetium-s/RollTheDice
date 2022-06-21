@@ -1,15 +1,3 @@
-@font-face {
-    font-family: 'SBAggroB';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'DungGeunMo';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
 *{
     margin: 0;
     padding: 0;
@@ -23,6 +11,7 @@ body{
     margin: 0 25%;
     height: 750px;
     background: linear-gradient(#FF008015, #7928CA15);
+    overflow: hidden;
 }
 header{
     margin-bottom: 50px;
@@ -40,7 +29,7 @@ header a{
 a:hover{
     cursor: pointer;
 }
-button{
+#run{
     width: 270px;
     height: 65px;
     color: #fff;
@@ -51,25 +40,68 @@ button{
     vertical-align: baseline;
     margin-top: 30px;
     background: linear-gradient(#FF0080, #7928CA);
-    border-color: #FF0080;
-    border-style: outset;
-    border-width: 5px;
+    border: #FF0080 5px outset;
     font-family: 'DungGeunMo';
+    display: none;
+    padding: 10px;
     
 }
-button:hover{
+#run:hover{
     cursor:pointer;
+    color: #eee;
 }
-button:active{
-    color: #ccc;
+#run:hover{
+    color: #fff;
+    background: linear-gradient(#ff2a94, #7e31ca);
+    border: #ff44a1 5px outset;
+}
+#run:active{
+    margin-top: 31px;
+    margin-right: 2px;
+    width: 265px;
+    height: 63px;
+    font-size: 19px;
     background: linear-gradient(#f20079, #7227bd);
-    border-color: #f20079;
-    border-style: outset;
+}
+#char_select{
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    display: inline-flex;
+    z-index: 2;
+}
+#char_select button{
+    height: 320px;
+    width: 375px;
+    margin: 3px;
+    background: #fff;
+    border: #FF0080 5px solid;
+    border-radius: 20px;
+    font-family: "Galmuri9";
+    font-size: 24px;
+    text-align: center;
+    display: inline;
+}
+#char_select button:hover{
+    background: #eee;
+}
+#char_select button:active{
+    background: #ccc;
+    height: 317px;
+    width: 365px;
+    margin: 4px 8px 4px 8px;
+    font-size: 23px;
+}
+#char_select button p:nth-child(1){
+    font-size: 72px;
+    margin-top: -10%
 }
 #map{
     margin-bottom: 50px;
     text-align: center;
     position: relative;
+    display: none;
 }
 ul li{
     display: inline-block;
@@ -179,6 +211,7 @@ ul li{
     animation-timing-function: ease-in-out;
     text-shadow: 0 0 3px #fff, 0 0 8px #fff;
     z-index: 1;
+    display: none;
 }
 #user_direction{
     font-family: sans-serif;

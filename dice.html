@@ -7,6 +7,8 @@
     <title>주사위 게임</title>
     <link rel="icon" type="image/x-icon" href= "images/favicon.ico" >
     <link rel="stylesheet" type="text/css" href="dice.css">
+    <link rel="stylesheet" type="text/css" href="fonts.css">
+    <link rel="stylesheet" type="text/css" href="event.css">
 </head>
 <body>
     <style>
@@ -16,6 +18,18 @@
         <a href="dice.html">주사위 게임</a>
         <button id="run" type="button">굴리기!</button>
     </header>
+
+    <div id = "char_select">
+        <button type="button">
+            <p>&#128663;</p>
+            <p>1인용</p>
+        </button>
+        <button type="button">
+            <p>&#128663;&#128665;</p>
+            <p>2인용</p>
+        </button>
+    </div>
+
     <div id="user">
         <p id = "user_name">PLAYER 1</p>
         <p id = "user_direction">&#9660;</p>
@@ -24,35 +38,32 @@
     <div id = "map">
             <div>
                 <ul class="city">
-                    <li>
-                        <p class = "cityImg">&#127969;</p>
-                        <p class = "cityTxt">START</p>
-                    </li>
-                    <li><p class = "cityImg">&#127751;</p> <p class = "cityTxt">1</p> </li>
-                    <li><p class = "cityImg">&#127753;</p> <p class = "cityTxt">2</p> </li>
-                    <li><p class = "cityImg">&#128007;</p> <p class = "cityTxt">3</p> </li>
-                    <li><p class = "cityImg">&#128075;</p> <p class = "cityTxt">4</p> </li>
-                    <li><p class = "cityImg">&#127794;</p> <p class = "cityTxt">5</p> </li>
-                    <li><p class = "cityImg">&#128152;</p> <p class = "cityTxt">6</p> </li>
-                    <li><p class = "cityImg">&#128172;</p> <p class = "cityTxt">7</p> </li>
-                    <li><p class = "cityImg">&#127799;</p> <p class = "cityTxt">8</p> </li>
-                    <li><p class = "cityImg">&#127984;</p> <p class = "cityTxt">9</p> </li>
-                    <li><p class = "cityImg">&#128123;</p> <p class = "cityTxt">10</p> </li>
-                    <li><p class = "cityImg">&#128034;</p> <p class = "cityTxt">11</p> </li>
-                    <li><p class = "cityImg">&#128522;</p> <p class = "cityTxt">12</p> </li>
-                    <li><p class = "cityImg">&#128184;</p> <p class = "cityTxt">13</p> </li>
-                    <li><p class = "cityImg">&#127769;</p> <p class = "cityTxt">14</p> </li>
-                    <li><p class = "cityImg">&#128679;</p> <p class = "cityTxt">15</p> </li>
-                    <li><p class = "cityImg">&#127794;</p> <p class = "cityTxt">16</p> </li>
-                    <li><p class = "cityImg">&#128101;</p> <p class = "cityTxt">17</p> </li>
-                    <li><p class = "cityImg">&#128580;</p> <p class = "cityTxt">18</p> </li>
-                    <li><p class = "cityImg">&#127988;</p> <p class = "cityTxt">19</p> </li>
-                    <li><p class = "cityImg">&#127969;</p> <p class = "cityTxt">20</p> </li>
-                    <li><p class = "cityImg">&#127751;</p> <p class = "cityTxt">21</p> </li> 
-                    <li><p class = "cityImg">&#127753;</p> <p class = "cityTxt">22</p> </li>
-                    <li><p class = "cityImg">&#128007;</p> <p class = "cityTxt">23</p> </li>
-                    <li><p class = "cityImg">&#128075;</p> <p class = "cityTxt">24</p> </li>
-                    <li><p class = "cityImg">&#127794;</p> <p class = "cityTxt">25</p> </li>
+                    <li><p class = "cityImg">&#127969;</p><p class = "cityTxt">START</p></li>
+                    <li><p class = "cityImg">&#127751;</p><p class = "cityTxt">1</p></li>
+                    <li><p class = "cityImg">&#127753;</p><p class = "cityTxt">2</p></li>
+                    <li><p class = "cityImg">&#128007;</p><p class = "cityTxt">3</p></li>
+                    <li><p class = "cityImg">&#128075;</p><p class = "cityTxt">4</p></li>
+                    <li><p class = "cityImg">&#127794;</p><p class = "cityTxt">5</p></li>
+                    <li><p class = "cityImg">&#128152;</p><p class = "cityTxt">6</p></li>
+                    <li><p class = "cityImg">&#128172;</p><p class = "cityTxt">7</p></li>
+                    <li><p class = "cityImg">&#127799;</p><p class = "cityTxt">8</p></li>
+                    <li><p class = "cityImg">&#127984;</p><p class = "cityTxt">9</p></li>
+                    <li><p class = "cityImg">&#128123;</p><p class = "cityTxt">10</p></li>
+                    <li><p class = "cityImg">&#128034;</p><p class = "cityTxt">11</p></li>
+                    <li><p class = "cityImg">&#128522;</p><p class = "cityTxt">12</p></li>
+                    <li><p class = "cityImg">&#128184;</p><p class = "cityTxt">13</p></li>
+                    <li><p class = "cityImg">&#127769;</p><p class = "cityTxt">14</p></li>
+                    <li><p class = "cityImg">&#128679;</p><p class = "cityTxt">15</p></li>
+                    <li><p class = "cityImg">&#127794;</p><p class = "cityTxt">16</p></li>
+                    <li><p class = "cityImg">&#128101;</p><p class = "cityTxt">17</p></li>
+                    <li><p class = "cityImg">&#128580;</p><p class = "cityTxt">18</p></li>
+                    <li><p class = "cityImg">&#127988;</p><p class = "cityTxt">19</p></li>
+                    <li><p class = "cityImg">&#127969;</p><p class = "cityTxt">20</p></li>
+                    <li><p class = "cityImg">&#127751;</p><p class = "cityTxt">21</p></li> 
+                    <li><p class = "cityImg">&#127753;</p><p class = "cityTxt">22</p></li>
+                    <li><p class = "cityImg">&#128007;</p><p class = "cityTxt">23</p></li>
+                    <li><p class = "cityImg">&#128075;</p><p class = "cityTxt">24</p></li>
+                    <li><p class = "cityImg">&#127794;</p><p class = "cityTxt">25</p></li>
             </ul>
         </div>
     </div>    
@@ -63,7 +74,9 @@
         <p id="returnPos">돌은 바퀴 수: </p><br>
         <p id="myPos">현재 내 위치: </p>
     </div>
+    <div id = "home">
+        <p>WELCOME<br>HOME</p>
+    </div>
 </body>
-
 <script src="dice.js"></script>
 </html>
