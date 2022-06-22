@@ -25,16 +25,13 @@
     var char_select = document.getElementById("char_select");
     var map = document.getElementById("map");
 
-    
     //캐릭터 위치 변경 표시
+    // var city = document.querySelector(".city li"); //맵 요소 1개만 선택
     var cityAll = document.querySelectorAll(".city li");//맵 요소 20개 전부 선택
     const selectMap = Array.from(cityAll); //선택된 맵 요소 20개 묶음을 배열로 변환
     var user = document.getElementById("user"); //캐릭터 요소 선택
-    
 
     
-
-
     //플레이 인원수 선택시 실행됨
     char_select.addEventListener("click", function(){
         char_select.style.display = "none";
@@ -63,8 +60,60 @@
         let rect = mapPos.getBoundingClientRect(); //반환된 맵의 좌표 계산
         let rectX = rect.x + "px";
         let rectY = rect.y + "px";
-        user.style.left = rectX;
-        user.style.top = rectY;
+
+        var city = document.getElementById("map");
+        let cityWidth = (city.clientWidth)/10 + "px" ;
+        let cityHeight = (city.clientHeight)/5 + "px" ;
+
+        console.log(cityWidth , cityHeight);
+        
+        // let i = 0;
+        // do{
+        //     setInterval(function userMove(){
+                // document.getElementById("user").style.left += (cityWidth + "px");
+                // document.getElementById("user").style.top += (cityHeight + "px");
+        //     },1000);
+        //     i++;
+        // }
+        // while(i = calcPos);
+
+
+
+        // function userLeft() {
+        //     document.getElementById("user").style.left;
+        // }
+        // function userTop() {
+        //     document.getElementById("user").style.top;
+        // }
+        // setInterval(function userMove(){
+        //         if(calcPos <= 9){
+        //             let i = 0;
+        //             while(i = 9){
+        //                 document.getElementById("user").style.left += cityWidth;
+        //                 document.getElementById("user").style.top += cityHeight;
+        //             }
+        //         }else if(calcPos <= 13){
+        //             document.getElementById("user").style.left = rectX;
+        //             let i = 0;
+        //             while(i = 13){
+        //             document.getElementById("user").style.top += cityHeight;
+        //         }
+        //         }else if(calcPos <= 22){
+        //             let i = 0;
+        //             while(i = 22){
+        //             document.getElementById("user").style.left += cityWidth;
+        //         }
+                    document.getElementById("user").style.top = rectY;
+        //         }else{
+                    document.getElementById("user").style.left = rectX;
+                    
+        //             let i = 0;
+        //             while(i = 25){
+        //             document.getElementById("user").style.top += cityHeight;
+        //             }
+        //         }
+        //     },0500);
+        
 
 
         document.getElementById("myPos").innerHTML = "현재 내 위치: " + rectX + ", " + rectY ; //옮겨진 위치값 입력
@@ -82,23 +131,13 @@
         var home = document.getElementById("home");
 
         //캐릭터 이동 후 발생하는 이벤트
-        (function event(){
+        (function (){
             if(calcPos < 1){
-                setTimeout(function startHome(){
-                    home.style.visibility = "visible";
-                    home.style.animationPlayState = "running";
-                }, 0000);
-                setTimeout(function stopHome() {
-                    home.style.visibility = "hidden";
-                    home.style.animationPlayState = "paused";
-                  }, 3000);
                 return console.log("0칸");
             }else if( calcPos < 2){
                 return console.log("1칸");
-
             }else if( calcPos < 3){
                 return console.log("2칸"); 
-
             }else if( calcPos < 4){
                 return console.log("3칸"); 
             }else if( calcPos < 5){
@@ -106,10 +145,6 @@
             }else if( calcPos < 6){
                 return console.log("5칸"); 
             }else if( calcPos < 7){
-                setTimeout(function startHome(){
-                }, 0500);
-                setTimeout(function stopHome() {
-                  }, 3000);
                 return console.log("6칸"); 
             }else if( calcPos < 8){
                 return console.log("7칸"); 
@@ -151,7 +186,23 @@
                 return console.log("25칸"); 
             }
         })();
+       
     });
+    //1바퀴 완료할 때마다 발생하는 이벤트
+    (function (){
+        if(calcPos > 0){
+            setTimeout(function startHome(){
+                home.style.visibility = "visible";
+                home.style.animationPlayState = "running";
+            }, 0000);
+            setTimeout(function stopHome() {
+                home.style.visibility = "hidden";
+                home.style.animationPlayState = "paused";
+            }, 3000);
+        }else{
+        }
+    })();
+
 
 })();
 
